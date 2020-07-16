@@ -79,7 +79,7 @@ bigtweets = []
 for tweet in alltweets:
 	if len(tweet) > 140:
 		bigtweets.append(tweet)	
-print(bigtweets[0])
+
 ### PREPROSSESSING
 tweets = []
 #saving without the preprocessing
@@ -102,25 +102,30 @@ alphaFl = float(alphaStr)
 betaStr = input("---> Which beta do you want to use? ")
 betaFl = float(betaStr)
 
+minProStr = input("---> Which minimum_probability do you want to use? ")
+minProFl = float(minProStr)
+
 ldamodel = gensim.models.ldamodel.LdaModel(corpus=corpus_,
                                            num_topics=nClusters,
                                            id2word=dictionary,
                                            alpha=alphaFl,                 # optional LDA hyperparameter alpha
                                            eta=betaFl,                   # optional LDA hyperparameter beta
-                                           minimum_probability=0.5    # optional the lower bound of the topic/word generative probability
+                                           minimum_probability=minProFl    # optional the lower bound of the topic/word generative probability
                                           )
 
 #showing all the learned topics
+print("the topics were:")
 topics = ldamodel.print_topics(num_words=15)
+
 for topic in topics:
     print(topic)
 
 # for each tweet, show the probabilities of topics which beyond the minimum_probability [(topic ID, probability)]
-for n,item in enumerate(corpus_[:20]):
+for n,item in enumerate(corpus_[:len(corpus_)]):
     print("tweet ID "+str(n)+":" ,end="")
     print(ldamodel.get_document_topics(item))
 
-for n in range(0,10):
+for n in range(0,20):
 	# nth tweet's topic distribution
 	print(ldamodel.get_document_topics(corpus_[n]))
 
@@ -128,3 +133,25 @@ for n in range(0,10):
 	print(unchangedTweets[n])
 
 
+#plotting clusters number of elements for analysis
+labels = list(list(zip(*topics))[0])
+print(labels)
+tweetTopics = dict.fromkeys(labels, 0)
+corpusSize = len(corpus_)
+
+for cps in corpus_:
+	for tp in ldamodel.get_document_topics(cps):
+		topic = tp[0]
+		tweetTopics[topic] =  tweetTopics[topic] + 1
+print(tweetTopics)
+
+values = list(tweetTopics.values())
+print(values)
+y_pos = numpy.arange(len(labels))
+plt.bar(y_pos,values, color = (0.5,0.1,0.5,0.6))
+plt.title('Number of topics in total = '+str(nClusters))
+plt.xlabel('Topics')
+plt.ylabel('Number of tweets with each topic')
+plt.ylim(0,400)
+plt.xticks(y_pos, labels)
+plt.show()
