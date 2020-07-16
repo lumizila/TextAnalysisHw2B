@@ -64,7 +64,6 @@ This assignment was to develop a program satisfying the following requirements:
   RT @MichaelH14: Ed Miliband : it wasn't the spending on teachers &amp; nurses in Britain that crashed the global economy. 'Bout time someone sa…
   [(3, 0.9771292)]
   RT @WelshConserv: We've come a long way in 5yrs. Don't let EdM &amp; SNP drag us back to square one. Let's keep going #SecureTheRecovery https:…
-  [(3, 0.9652099)]
   ```
   
   #### For K = 10
@@ -147,7 +146,6 @@ This assignment was to develop a program satisfying the following requirements:
   RT @shonad7674: Tory &amp; Labour you insult me every time you open your mouth.I am a pensioner voting politically for 1st time &amp; will be votin…
   [(13, 0.9034386)]
   RT @AngusMacNeilSNP: Again Nicola Sturgeon a truly amazing political &amp; honest personal connection with audience ..#Impressed  Join SNP at h…
-  [(14, 0.8879382)]
   ```
   
   #### 2.2 Discuss the differences for each k. 
@@ -159,7 +157,7 @@ Second, I want to compare the bar graphs obtained in this homework 2A with those
 
 Finally, I want to compare the results between each number of clusters (5, 10, 15). 
 
-I begin explaining some non-obvious terms that appear on the tweets and therefore on the topics:
+I begin explaining some non-obvious terms that appear on the tweets and therefore on the topics (and seem important for analysis):
 
 SNP = Scottish National Party, a social-democratic political party in Scotland
 
@@ -169,7 +167,17 @@ UKIP = UK Independence Party (right wing populist political party in the UK)
 
 FM = I believe in the context of the tweets this means “First Minister”
 
+Ed Miliband = British politian, member of the Labor Party (2010-2015) which is a centre-left political party. 
+
 By the words inside each topic, it is possible to conclude that many tweets coming from this nltk dataset were done during political voting times/uncertainty. With k=5 I notice that many words repeat (with big multipliers) inside different topics, such as “SNP, UKIP, Miliband, Cameron, vote”, etc. I think this is not ideal because even though a big part of the tweets were about politics, not all of them are. With k=10 the same thing happened.  With k=15 new words started to appear with strong multipliers, such as “nigelfarage”, “fm”. I was curious and increased the K = 30 just to see what would happen to the topics and saw the same tendency of political topics, with few additional words. 
+
+About the topic distibution for the tweets, since they are mostly political I would like to see if the clustering was able to cluster tweets showing support to the same political parties. This task was hard for me because I am not British and I do not understand much about British politics. I will try my best below. 
+
+When K=5, from the examples of tweets and topics shown, I can see that tweets on cluster 2 are in similar sides of political spectrum (in one SNP is criticized, and in the other Ed Miliband is criticized which both represent more left-wing politics), however the tweets are not talking about the same event at all. 
+When K=10, from the examples of tweets and topics shown, it is possible to see that the two tweets in cluster 0 are talking about the SNP which is a good sign, however it seems that both tweets are on opposite sides of the political views (one is defending SNP and the other is criticizing SNP)
+When K=15, from the examples of tweets and topics shown, it is possible to see that the 3 tweets which were assigned topic 1 are talking about the same thing (Mr Miliband) and they are also on the same side of the political spectrum (the 3 of them are criticizing Mr Miliband) it was a great clustering !
+
+Disclaimer: I do not have time of means to analyze all the tweets and their most likely cluster, but I hope this was a good enough exemplification of what increasing K value can do. 
 
   ### 3. Changing values for alpha, beta and minimum probability.
   
