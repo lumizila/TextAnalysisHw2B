@@ -25,13 +25,14 @@ This assignment was to develop a program satisfying the following requirements:
   
   ### 2. Comparing the clustering results with different parameter k 
   
-  I ran the code with 3 different values for k: 5, 10, 15
-  And my results of the clustering as well as discussion of differences for each k are discussed on the topics below. 
+  The code I wrote gives the user the opportunity to choose different values for: alpha, beta, minimum probability and number of topics (k clusters). Firstly I decided to keep everything the same except for the number of topics (k clusters). Therefore for this section 2, the values remaining the same are: alpha = 0.1; beta = 0.1; minimum probability = 0.5. 
+  And I ran the code with 3 different values for k: 5, 10, 15
+  My results of the clustering as well as discussion of differences for each k are discussed on the topics below. 
   
   #### 2.1 Describing the results for each k.
   
   As mentioned before, I considered each tweet to be one document, so each cluster will contain multiple tweets. 
- 
+  
   #### For K = 5
   
   
@@ -43,7 +44,11 @@ This assignment was to develop a program satisfying the following requirements:
   
   #### 2.2 Discuss the differences for each k. 
   
-  ### 3. Consideration
+  ### 3. Changing values for alpha, beta and minimum probability.
   
-  ### 4. Source code on GitHub: https://github.com/lumizila/TextAnalysisHw2B
+  ### 4. Consideration
+  
+  The same consideration made on the Assignment 2A, this dataset has a problem in that many tweets are retweets with most of the text being the same between the original tweet and the retweets. In the future I should also filter the retweets and test the clustering methods again.  
+  
+  ### 5. Source code on GitHub: https://github.com/lumizila/TextAnalysisHw2B
   
