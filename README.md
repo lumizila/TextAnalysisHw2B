@@ -23,10 +23,10 @@ This assignment was to develop a program satisfying the following requirements:
     
    Next I split the tweets in words, and moved all the words that match one of the words in the "stopWords" list. Everything left was transformed to lowercase. 
   
-  ### 2. Comparing the clustering results with different parameter k
+  ### 2. Comparing the clustering results with different parameter k 
   
   I ran the code with 3 different values for k: 5, 10, 15
-  And my results of the clustering as well as their evaluation for each k are discussed on the topics below. 
+  And my results of the clustering as well as discussion of differences for each k are discussed on the topics below. 
   
   #### 2.1 Describing the results for each k.
   
@@ -34,9 +34,16 @@ This assignment was to develop a program satisfying the following requirements:
  
   #### For K = 5
   
+  
+  #### For K = 10
+  
+  
+  #### For K = 15
+  
+  
   #### 2.2 Discuss the differences for each k. 
   
   ### 3. Consideration
   
-  ### 4. Source code on GitHub: 
+  ### 4. Source code on GitHub: https://github.com/lumizila/TextAnalysisHw2B
   
