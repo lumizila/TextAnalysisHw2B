@@ -185,11 +185,19 @@ Disclaimer: I do not have time of means to analyze all the tweets and their most
   
   When increasing alpha to the high value of 0.9 (k=10, beta=0.1, min probability=0.5): 
   
+  With this alpha, most tweets did not have any topic with a min probability higher than 0.5. This is explainable since with a higher alpha the algorithm assumes the tweets to be made of more topics, and result in a more specific topic distribution per tweet.
+  
   When increasing beta to the high value of 0.9 (k=10, alpha=0.1, min probability=0.5): 
+  
+  With a change in beta to 0.9, what changed was the multiplier for each word in a topic. Most tweets had a topic with a high probability however, the values of the multiplies of each word in a topic were lowered a lot more than with beta = 0.1. This is explainable because with a higher beta the algorithm assumes that topics are made up of most words in the dictionary, resulting in more words but lower multipliers. 
   
   When increasing min probability to the high value of 0.9 (k=10, alpha=0.1, beta=0.1): 
 
+  Naturally, increasing the min probability to calculate LDA topic distribution, a lot more tweets than normal appear to have no relevant topic. However, even with min probability as high as 0.9, most tweets still were assigned at least one topic, I believe this is because the tweets were so similar in content (many talking about politics) so it is easy to fit them in at least one out of 10 topics.  
+
   When decreasing min probability to the low value of 0.1 (k=10, alpha=0.1, beta=0.1): 
+  
+  As expected, in this case many tweets will have multiple topics assigned to them. 
   
   ### 4. Consideration
   
