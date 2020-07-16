@@ -181,6 +181,16 @@ Disclaimer: I do not have time of means to analyze all the tweets and their most
 
   ### 3. Changing values for alpha, beta and minimum probability.
   
+  As suggested by the Professor, changing values of alpha, beta and minimum probability. The results of the changes are briefly discussed below:
+  
+  When increasing alpha to the high value of 0.9 (k=10, beta=0.1, min probability=0.5): 
+  
+  When increasing beta to the high value of 0.9 (k=10, alpha=0.1, min probability=0.5): 
+  
+  When increasing min probability to the high value of 0.9 (k=10, alpha=0.1, beta=0.1): 
+
+  When decreasing min probability to the low value of 0.1 (k=10, alpha=0.1, beta=0.1): 
+  
   ### 4. Consideration
   
   The same consideration made on the Assignment 2A, this dataset has a problem in that many tweets are retweets with most of the text being the same between the original tweet and the retweets. In the future I should also filter the retweets and test the clustering methods again.  
