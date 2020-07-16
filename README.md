@@ -152,6 +152,25 @@ This assignment was to develop a program satisfying the following requirements:
   
   #### 2.2 Discuss the differences for each k. 
   
+Firstly, I would like to talk about the topics found for each tweet.
+One trend I noticed was that, the higher the number of topics (k), the more some of the tweets ended up not being assigned to any topic. One of the reasons for that is because  all the topics that these tweets could potentially have had a small probability (less than 0.5). This makes absolute sense because the more topics a tweet can possibly have, the harder it is to pinpoint one specific topic for it.  
+
+Second, I want to compare the bar graphs obtained in this homework 2A with those of homework 2B. By the more smooth distribution of tweets over topics(clusters), I believe LDA works better for clustering tweets than k-means with cosine similarity. 
+
+Finally, I want to compare the results between each number of clusters (5, 10, 15). 
+
+I begin explaining some non-obvious terms that appear on the tweets and therefore on the topics:
+
+SNP = Scottish National Party, a social-democratic political party in Scotland
+
+Tory (Tories in plural) = Colloquial term used for someone who belongs to the centre-right Conservative party in the UK
+
+UKIP = UK Independence Party (right wing populist political party in the UK)
+
+FM = I believe in the context of the tweets this means “First Minister”
+
+By the words inside each topic, it is possible to conclude that many tweets coming from this nltk dataset were done during political voting times/uncertainty. With k=5 I notice that many words repeat (with big multipliers) inside different topics, such as “SNP, UKIP, Miliband, Cameron, vote”, etc. I think this is not ideal because even though a big part of the tweets were about politics, not all of them are. With k=10 the same thing happened.  With k=15 new words started to appear with strong multipliers, such as “nigelfarage”, “fm”. I was curious and increased the K = 30 just to see what would happen to the topics and saw the same tendency of political topics, with few additional words. 
+
   ### 3. Changing values for alpha, beta and minimum probability.
   
   ### 4. Consideration
